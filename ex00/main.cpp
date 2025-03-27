@@ -33,7 +33,7 @@ int main()
 		std::cout << "Instancing a bureaucrat with grade 266" << std::endl;
 		Bureaucrat malcom = Bureaucrat("Malcom", 266);
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -46,7 +46,7 @@ int main()
 		std::cout << "Raising " << gil.getName() << "'s grade" << std::endl;
 		gil.raiseGrade();
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -65,7 +65,11 @@ int main()
 		milton.dropGrade();
 		std::cout << "This message shouldn't be shown, the try block has been interrupted by an exception" << std::endl;
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
