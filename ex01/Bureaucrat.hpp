@@ -6,13 +6,15 @@
 /*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 17:27:43 by samartin          #+#    #+#             */
-/*   Updated: 2025/02/23 17:08:47 by samartin         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:25:28 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
+
+class Form;
 
 class Bureaucrat
 {
@@ -26,6 +28,7 @@ class Bureaucrat
 		int getGrade() const;
 		void raiseGrade();
 		void dropGrade();
+		void signForm(Form f);
 		class GradeTooLowException : public std::exception
 		{
 			public:

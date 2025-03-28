@@ -6,11 +6,12 @@
 /*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:57:25 by samartin          #+#    #+#             */
-/*   Updated: 2025/03/27 13:00:06 by samartin         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:25:34 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /* Constructors (Default, set type, copy) and destructor */
 
@@ -65,6 +66,18 @@ void Bureaucrat::dropGrade()
 	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
+}
+
+void Bureaucrat::signForm(Form f)
+{
+	try
+	{
+		f.beSigned(this);
+	}
+	catch(const Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 /* Exception classes `what()` override */

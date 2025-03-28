@@ -6,7 +6,7 @@
 /*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:37:25 by samartin          #+#    #+#             */
-/*   Updated: 2025/03/27 13:00:15 by samartin         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:23:44 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ bool Form::getSigned() const
 
 /* Sign function */
 
-void Form::beSigned(Bureaucrat bur)
+void Form::beSigned(Bureaucrat *bur)
 {
-	if (bur.getGrade() <= this->_grade2Sign)
+	if (bur->getGrade() <= this->_grade2Sign)
 		this->_signed = true;
 	else
 		throw Form::GradeTooLowException();

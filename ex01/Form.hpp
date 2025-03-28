@@ -6,7 +6,7 @@
 /*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:37:43 by samartin          #+#    #+#             */
-/*   Updated: 2025/03/27 12:44:03 by samartin         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:23:29 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form
 		int getGrade2Sign() const;
 		int getGrade2Exe() const;
 		bool getSigned() const;
-		void beSigned(Bureaucrat bur);
+		void beSigned(Bureaucrat *bur);
 		class GradeTooLowException : public std::exception
 		{
 			public:
