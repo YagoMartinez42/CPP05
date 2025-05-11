@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /* Constructors (Default, set type, copy) and destructor */
 
@@ -41,13 +41,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& orig)
 
 /* Getter functions */
 
-const std::string &Bureaucrat::getName() const
+std::string const & Bureaucrat::getName() const
 {
 	std::string const & nameRef = this->_name;
 	return(nameRef);
 }
 
-const int &Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
 	return(this->_grade);
 }
@@ -68,13 +68,13 @@ void Bureaucrat::dropGrade()
 	this->_grade++;
 }
 
-void Bureaucrat::signForm(Form& f)
+void Bureaucrat::signForm(AForm& f)
 {
 	try
 	{
 		f.beSigned(this);
 	}
-	catch(const Form::GradeTooLowException& e)
+	catch(const AForm::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

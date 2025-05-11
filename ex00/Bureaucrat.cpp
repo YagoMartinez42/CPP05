@@ -40,13 +40,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& orig)
 
 /* Getter functions */
 
-std::string const & Bureaucrat::getName() const
+const std::string &Bureaucrat::getName() const
 {
 	std::string const & nameRef = this->_name;
 	return(nameRef);
 }
 
-int Bureaucrat::getGrade() const
+const int &Bureaucrat::getGrade() const
 {
 	return(this->_grade);
 }

@@ -18,61 +18,62 @@ int main()
 	Bureaucrat gil = Bureaucrat ("Gil", 1);
 
 	std::cout << std::endl;
-	std::cout << "==================================" << std::endl;
-	std::cout << "|    Two bureaucrats are here    |" << std::endl;
-	std::cout << "==================================" << std::endl;
+	std::cout << "\e[33m\e[44m==================================\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m|    Two bureaucrats are here    |\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m==================================\e[00m" << std::endl;
 	std::cout << milton << std::endl;
 	std::cout << gil << std::endl;
 
 	std::cout << std::endl;
-	std::cout << "=========================================================" << std::endl;
-	std::cout << "| Malcom shouldn't try to join this bureaucratic system |" << std::endl;
-	std::cout << "=========================================================" << std::endl;
+	std::cout << "\e[33m\e[44m=========================================================\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m| Malcom shouldn't try to join this bureaucratic system |\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m=========================================================\e[00m" << std::endl;
 	try
 	{
-		std::cout << "Instancing a bureaucrat with grade 266" << std::endl;
+		std::cout << "\e[32mInstancing a bureaucrat with grade 266\e[00m" << std::endl;
 		Bureaucrat malcom = Bureaucrat("Malcom", 266);
 	}
-	catch (Bureaucrat::GradeTooLowException& e)
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 	std::cout << std::endl;
-	std::cout << "=========================================================" << std::endl;
-	std::cout << "|  Some people always want more even being at the top   |" << std::endl;
-	std::cout << "=========================================================" << std::endl;
+	std::cout << "\e[33m\e[44m=========================================================\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m|  Some people always want more even being at the top   |\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m=========================================================\e[00m" << std::endl;
 	try
 	{
-		std::cout << "Raising " << gil.getName() << "'s grade" << std::endl;
+		std::cout << "\e[32mRaising " << gil.getName() << "'s grade\e[00m" << std::endl;
 		gil.raiseGrade();
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
+	catch (const Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 	std::cout << std::endl;
-	std::cout << "=====================================================================" << std::endl;
-	std::cout << "| Milton is such a fool that can get a raise and then two demotions |" << std::endl;
-	std::cout << "=====================================================================" << std::endl;
+	std::cout << "\e[33m\e[44m=====================================================================\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m| Milton is such a fool that can get a raise and then two demotions |\e[00m" << std::endl;
+	std::cout << "\e[33m\e[44m=====================================================================\e[00m" << std::endl;
 	try
 	{
-		std::cout << "Raising " << milton.getName() << "'s grade" << std::endl;
+		std::cout << "\e[32mRaising " << milton.getName() << "'s grade\e[00m" << std::endl;
 		milton.raiseGrade();
-		std::cout << "After a Raise, " << milton.getName() << " is grade " << milton.getGrade() << std::endl;
-		std::cout << "Dropping " << milton.getName() << "'s grade" << std::endl;
+		std::cout << "\e[32mAfter a Raise, " << milton.getName() << " is grade " << milton.getGrade() << "\e[00m" << std::endl;
+		std::cout << "\e[32mDropping " << milton.getName() << "'s grade\e[00m" << std::endl;
 		milton.dropGrade();
-		std::cout << "Dropping " << milton.getName() << "'s grade" << std::endl;
+		std::cout << "\e[32mDropping " << milton.getName() << "'s grade\e[00m" << std::endl;
 		milton.dropGrade();
 		std::cout << "This message shouldn't be shown, the try block has been interrupted by an exception" << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
+	catch (const Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException& e)
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "After all this mess, " << milton.getName() << " is grade " << milton.getGrade() << std::endl;
+	std::cout << "\e[32mAfter all this mess, " << milton.getName() << " is the same grade.\e[00m" << std::endl;
+	std::cout << milton << std::endl;
 	return (0);
 }

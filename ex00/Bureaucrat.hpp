@@ -22,8 +22,8 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& orig);
 		~Bureaucrat();
 		Bureaucrat& operator=(const Bureaucrat& orig);
-		std::string const & getName() const;
-		int getGrade() const;
+		const std::string &getName() const;
+		const int &getGrade() const;
 		void raiseGrade();
 		void dropGrade();
 		class GradeTooLowException : public std::exception

@@ -41,9 +41,9 @@ class Form
 		};
 	private:
 		std::string const _name;
-		bool _signed;
 		const int _grade2Sign;
 		const int _grade2Exe;
+		bool _signed;
 };
 
 std::ostream& operator<<(std::ostream& stm, const Form& frm);
