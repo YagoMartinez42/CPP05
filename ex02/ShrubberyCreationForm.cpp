@@ -29,6 +29,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
 	std::string tree = "Enjoy\n└this";
 
-	//check grade
-	//write tree to this->target + "_shrubbery" file.
+	if (!this->getSigned())
+		throw AForm::FormNotSignedException();
+	if (this->getGrade2Exe() > executor.getGrade())
+		throw AForm::GradeTooLowException();
+	//now open, write with tree and close the file <this->target + "_shrubbery">
+
 }

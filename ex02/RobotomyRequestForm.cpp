@@ -27,7 +27,10 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
-	//check grade
+	if (!this->getSigned())
+		throw AForm::FormNotSignedException();
+	if (this->getGrade2Exe() > executor.getGrade())
+		throw AForm::GradeTooLowException();
 	//print drill noises
 	//random roll 50%
 	//<target> has been robotomized successfully
