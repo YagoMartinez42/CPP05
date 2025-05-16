@@ -31,9 +31,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
 		throw AForm::FormNotSignedException();
 	if (this->getGrade2Exe() > executor.getGrade())
 		throw AForm::GradeTooLowException();
-	//print drill noises
-	//random roll 50%
-	//<target> has been robotomized successfully
-	//or
-	//the robotomy failed
+	std::srand(std::time(0));
+	std::cout << "\e33mdrrññññiiiiii!!!\e00m" << std::endl;
+	if (std::rand() & 1)
+		std::cout << this->_target << " has been robotomized successfully" << std::endl;
+	else 
+		std::cout << "The robotomy failed" << std::endl;
 }
