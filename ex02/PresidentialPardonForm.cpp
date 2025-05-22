@@ -29,7 +29,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor)
 {
 	if (!this->getSigned())
 		throw AForm::FormNotSignedException();
-	if (this->getGrade2Exe() > executor.getGrade())
+	if (this->getGrade2Exe() < executor.getGrade())
 		throw AForm::GradeTooLowException();
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

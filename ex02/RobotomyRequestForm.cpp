@@ -29,7 +29,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
 	if (!this->getSigned())
 		throw AForm::FormNotSignedException();
-	if (this->getGrade2Exe() > executor.getGrade())
+	if (this->getGrade2Exe() < executor.getGrade())
 		throw AForm::GradeTooLowException();
 	std::srand(std::time(0));
 	std::cout << "\e33mdrrññññiiiiii!!!\e00m" << std::endl;
