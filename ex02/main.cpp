@@ -11,10 +11,13 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-
+    Bureaucrat presi("Perro X", 1);
+    ShrubberyCreationForm aform("My_house");
+    aform.beSigned(&presi);
+    aform.execute(presi);
     return(0);
 }

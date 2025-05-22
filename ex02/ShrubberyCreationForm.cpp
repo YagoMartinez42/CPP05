@@ -25,14 +25,16 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 /* Concrete Form execute override */
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	std::string tree = "Enjoy\n└this";
+	std::string ATree = "   o\n oooo\n oooooo\n oooo\n  ||\n";
+	std::string alsoATree = "Enjoy\n └-this\n └-ascci tree";
+	std::string fileName = this->_target + "_shrubbery";
+	std::ofstream aFile(fileName.c_str());
 
 	if (!this->getSigned())
 		throw AForm::FormNotSignedException();
-	if (this->getGrade2Exe() > executor.getGrade())
+	if (this->getGrade2Exe() < executor.getGrade())
 		throw AForm::GradeTooLowException();
-	//now open, write with tree and close the file <this->target + "_shrubbery">
-
+	aFile << ATree << std::endl << alsoATree << std::endl;
 }

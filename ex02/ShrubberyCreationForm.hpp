@@ -13,6 +13,7 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 # include "AForm.hpp"
+# include <fstream>
 
 class  ShrubberyCreationForm : public AForm
 {
@@ -22,7 +23,7 @@ class  ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm& orig);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& orig);
-		void execute(Bureaucrat const &executor);
+		void execute(Bureaucrat const &executor) const;
 	private:
 		std::string const _target;
 };

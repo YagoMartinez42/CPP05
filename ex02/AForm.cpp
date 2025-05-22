@@ -17,7 +17,7 @@
 
 AForm::AForm() : _name(""), _grade2Sign(150), _grade2Exe(150) {}
 
-AForm::AForm(const AForm& orig) : _name(orig._name), _grade2Sign(orig._grade2Sign), _grade2Exe(orig._grade2Exe), _signed(orig._signed) {}
+AForm::AForm(const AForm& orig) : _name(orig._name), _signed(orig._signed), _grade2Sign(orig._grade2Sign), _grade2Exe(orig._grade2Exe) {}
 
 AForm::AForm(const std::string nameP, const int grade2SignP, const int grade2ExeP) : _name(nameP), _grade2Sign(grade2SignP), _grade2Exe(grade2ExeP)
 {
