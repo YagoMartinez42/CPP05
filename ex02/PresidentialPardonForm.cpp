@@ -25,7 +25,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 /* Concrete Form execute override */
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor)
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (!this->getSigned())
 		throw AForm::FormNotSignedException();

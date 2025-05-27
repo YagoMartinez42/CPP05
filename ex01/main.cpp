@@ -45,6 +45,10 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	try
 	{
 		std::cout << "\e[32mInstancing a form to request a raise\e[00m" << std::endl;
@@ -55,6 +59,10 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 	catch (const Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -69,11 +77,15 @@ int main()
 	}
 	catch (const Form::GradeTooHighException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch (const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << "\e[32mThe form should remain unsigned:\n\e[00m" << more << std::endl;
 	try
@@ -83,11 +95,15 @@ int main()
 	}
 	catch (const Form::GradeTooHighException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch (const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << "\e[32mThe form is now like this:\e[00m" << std::endl;
 	std::cout << more << std::endl;

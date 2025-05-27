@@ -73,6 +73,10 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	std::cout << "\e[32mAfter all this mess, " << milton.getName() << " is the same grade.\e[00m" << std::endl;
 	std::cout << milton << std::endl;
 	return (0);

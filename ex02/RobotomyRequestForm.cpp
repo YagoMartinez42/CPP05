@@ -25,14 +25,14 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 /* Concrete Form execute override */
 
-void RobotomyRequestForm::execute(Bureaucrat const &executor)
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	if (!this->getSigned())
 		throw AForm::FormNotSignedException();
 	if (this->getGrade2Exe() < executor.getGrade())
 		throw AForm::GradeTooLowException();
 	std::srand(std::time(0));
-	std::cout << "\e33mdrrññññiiiiii!!!\e00m" << std::endl;
+	std::cout << "\e[33mdrrññññiiiiii!!!\e[00m" << std::endl;
 	if (std::rand() & 1)
 		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else 

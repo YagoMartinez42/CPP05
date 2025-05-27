@@ -22,7 +22,7 @@ class  PresidentialPardonForm : public AForm
 		PresidentialPardonForm(const PresidentialPardonForm& orig);
 		~PresidentialPardonForm();
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& orig);
-		void execute(Bureaucrat const &executor);
+		void execute(Bureaucrat const &executor) const;
 	private:
 		std::string const _target;
 };
