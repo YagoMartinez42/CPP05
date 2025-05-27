@@ -4,6 +4,7 @@ CXXFLAGS	:= -Wall -Werror -Wextra -std=c++98
 RM			:= rm -rf
 SRC			:= main.cpp \
 				Bureaucrat.cpp \
+				Intern.cpp \
 				AForm.cpp \
 				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
