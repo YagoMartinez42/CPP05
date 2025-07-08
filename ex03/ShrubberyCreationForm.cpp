@@ -38,4 +38,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw AForm::GradeTooLowException();
 	aFile.open (fileName.c_str());
 	aFile << ATree << std::endl << alsoATree << std::endl;
+	aFile.close();
 }
